@@ -15,6 +15,7 @@ DEPENDS+=	${PYPKGPREFIX}-cElementTree-[0-9]*:../../textproc/py-cElementTree
 
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
+USE_MULTIARCH=	lib
 USE_TOOLS+=	pkg-config flex bison gmake
 GMAKE_REQD=	3.81
 
@@ -35,7 +36,7 @@ SUBST_SED.timet+=	-e 's,@TIMET_CTYPE@,glong,g'
 .endif
 
 # not executable
-CHECK_INTERPRETER_SKIP+= lib/gobject-introspection/giscanner/*.py
+CHECK_INTERPRETER_SKIP+= lib${LIBARCHSUFFIX}/gobject-introspection/giscanner/*.py
 
 PKGCONFIG_OVERRIDE+=	gobject-introspection-1.0.pc.in
 
