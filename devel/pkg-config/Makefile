@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.21 2012/08/13 08:01:54 marino Exp $
+# $NetBSD: Makefile,v 1.24 2012/08/20 04:56:00 dsainty Exp $
 
 DISTNAME=	pkg-config-0.27
 PKGREVISION=	1
@@ -32,6 +32,20 @@ CONFLICTS=		pkgconfig-[0-9]*
 CONFIGURE_ARGS+=	--cache-file=/dev/null
 .endif
 
+.if ${OPSYS} == "NetBSD"
+post-configure:
+	cd ${WRKSRC}/glib; \
+	${GREP} -v HAVE_DTRACE config.h >config.h.new; \
+	${MV} config.h.new config.h
+.endif
+
+.if ${OPSYS} == "SunOS"
+CONFIGURE_ARGS+=	--disable-dtrace
+.endif
+
+CONFIGURE_ARGS+=	${CONFIGURE_ARGS.${ICONV_TYPE}-iconv}
+CONFIGURE_ARGS.gnu-iconv=	--with-libiconv=gnu
+
 PKGCONFIG_EXTRA_PATHS=	# empty
 
 .if ${LOCALBASE} != ${X11BASE}
@@ -51,6 +65,7 @@ CONFIGURE_ARGS+=	--with-pc-path='$${libdir}/pkgconfig:$${datadir}/pkgconfig:${PK
 BUILDLINK_PASSTHRU_DIRS= /private-dep /public-dep /requires-test
 TEST_TARGET=		check
 
+.include "../../converters/libiconv/buildlink3.mk"
 .include "../../devel/gettext-lib/buildlink3.mk"
 .include "../../mk/dlopen.buildlink3.mk"
 #.include "../../devel/glib2/buildlink3.mk"

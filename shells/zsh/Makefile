@@ -1,11 +1,10 @@
-# $NetBSD: Makefile,v 1.57 2012/07/22 10:03:40 ryoon Exp $
+# $NetBSD: Makefile,v 1.60 2012/08/17 12:22:51 wiz Exp $
 
 .include "../../shells/zsh/Makefile.common"
 
 ZSH_VERSION=	5.0.0
 ZSH_MAINTAINER=	uebayasi@NetBSD.org
-
-USE_TOOLS+=	env
+PKGREVISION=	2
 
 CONFIGURE_ARGS+=	--disable-gdbm
 
@@ -15,6 +14,7 @@ SUBST_FILES.prefix-fixup= \
 	Misc/globtests \
 	Misc/globtests.ksh \
 	Test/ztst.zsh \
+	Test/runtests.zsh \
 	Util/reporter \
 	Functions/Calendar/calendar_add \
 	Functions/Misc/run-help \
@@ -23,10 +23,9 @@ SUBST_FILES.prefix-fixup= \
 	Functions/Misc/zcalc \
 	Functions/Misc/zkbd \
 	Functions/Misc/zed \
-	Functions/Example/cat
+	Functions/Example/cat \
+	Functions/Example/zless
 SUBST_SED.prefix-fixup= \
-	-e 's|^\#\!/bin/env|\#\!${TOOLS_PATH.env}|g' \
-	-e 's|^\#\! /bin/env|\#\! ${TOOLS_PATH.env}|g' \
 	-e 's|^\#\!/bin/zsh|\#\!${PREFIX}/bin/zsh|g' \
 	-e 's|^\#\! /bin/zsh|\#\! ${PREFIX}/bin/zsh|g' \
 	-e 's|^\#\!/usr/local/bin/zsh|\#\!${PREFIX}/bin/zsh|g' \

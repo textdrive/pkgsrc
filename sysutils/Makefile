@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.548 2012/08/12 09:17:12 imil Exp $
+# $NetBSD: Makefile,v 1.550 2012/08/20 11:44:00 ryoon Exp $
 #
 
 COMMENT=	System utilities
@@ -295,6 +295,7 @@ SUBDIR+=	nvnet
 SUBDIR+=	nvramtool
 SUBDIR+=	oak
 SUBDIR+=	open-vm-tools
+SUBDIR+=	openxenmanager
 SUBDIR+=	osname
 SUBDIR+=	p5-File-Copy-Recursive
 SUBDIR+=	p5-File-Remove
@@ -311,6 +312,7 @@ SUBDIR+=	p5-Linux-Inotify2
 SUBDIR+=	p5-Mac-AppleScript
 SUBDIR+=	p5-Mac-AppleScript-Glue
 SUBDIR+=	p5-Parse-Syslog
+SUBDIR+=	p5-Quota
 SUBDIR+=	p5-SSH-Batch
 SUBDIR+=	p5-Server-Starter
 SUBDIR+=	p5-Sys-CpuLoad

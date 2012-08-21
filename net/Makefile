@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.925 2012/08/12 16:14:11 imil Exp $
+# $NetBSD: Makefile,v 1.928 2012/08/20 12:18:00 wiz Exp $
 #
 
 COMMENT=	Networking tools
@@ -24,6 +24,7 @@ SUBDIR+=	airportbasestationconfig
 SUBDIR+=	airportmodemutility
 SUBDIR+=	amule
 SUBDIR+=	aoe-vblade
+SUBDIR+=	apollo
 SUBDIR+=	argus
 SUBDIR+=	aria2
 SUBDIR+=	arla
@@ -75,6 +76,7 @@ SUBDIR+=	cmu-dhcpd
 SUBDIR+=	cntlm
 SUBDIR+=	coda
 SUBDIR+=	coherence
+SUBDIR+=	coilmq
 SUBDIR+=	connect
 SUBDIR+=	corkscrew
 SUBDIR+=	couriertcpd
@@ -130,6 +132,7 @@ SUBDIR+=	fmirror
 SUBDIR+=	fpdns
 SUBDIR+=	fping
 SUBDIR+=	fping6
+SUBDIR+=	freeDiameter
 SUBDIR+=	freenet-tools
 SUBDIR+=	freeradius
 SUBDIR+=	freeradius2

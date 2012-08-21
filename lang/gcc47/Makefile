@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.5 2012/07/23 12:47:55 jperkin Exp $
+# $NetBSD: Makefile,v 1.6 2012/08/20 07:22:09 sbd Exp $
 
 GCC_PKGNAME=		gcc47
 .include		"version.mk"

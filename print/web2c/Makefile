@@ -1,7 +1,8 @@
-# $NetBSD: Makefile,v 1.23 2012/07/10 22:34:38 minskim Exp $
+# $NetBSD: Makefile,v 1.25 2012/08/14 21:05:51 minskim Exp $
 
 DISTNAME=	texlive-20120701-source
 PKGNAME=	web2c-2012
+PKGREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
 EXTRACT_SUFX=	.tar.xz
@@ -14,7 +15,7 @@ CONFLICTS+=	ja-ptex-bin-[0-9]*
 CONFLICTS+=	teTeX-bin<=3.0nb28
 CONFLICTS+=	texlive-tetex<2010
 DEPENDS+=	kpathsea>=6.0.1:../../print/kpathsea
-DEPENDS+=	ptexenc>=1.2.0:../../print/ptexenc
+DEPENDS+=	ptexenc>=1.3.0:../../print/ptexenc
 
 EXTRACT_ELEMENTS=	${DISTNAME}/build-aux \
 			${DISTNAME}/libs/obsdcompat \
