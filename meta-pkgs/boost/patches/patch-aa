@@ -6,7 +6,7 @@ $NetBSD: patch-aa,v 1.9 2011/10/11 10:02:08 adam Exp $
        : <location>$(stage-locate)/lib
          <install-dependencies>on <install-type>LIB
          <install-no-version-symlinks>on
-+        <dll-path>@PREFIX@/lib
++        <dll-path>@PREFIX@/lib@LIBARCHSUFFIX@
        ;
      $(p).mark-target-as-explicit stage-proper ;
  
