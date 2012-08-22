@@ -89,6 +89,12 @@ GCC_REQD+=	2.8.0
 GCC_REQD+=	3.0
 .endif
 
+# On systems which do not use the GNU linker, gcc will link against libgcc
+# when building shared libraries, so we mandate it as a dependency.
+.if ${OPSYS} == "SunOS" && (defined(USE_LIBTOOL) || defined(USE_GCC_RUNTIME))
+_USE_GCC_SHLIB=	yes
+.endif
+
 # Only one compiler defined here supports Ada: lang/gcc-aux
 # If the Ada language is requested, force lang/gcc-aux to be selected
 .if !empty(USE_LANGUAGES:Mada)
@@ -412,18 +418,16 @@ _USE_GCC_SHLIB?=	yes
 .  endif
 .elif !empty(_NEED_GCC47:M[yY][eE][sS])
 #
-# We require gcc-4.7.x in the lang/gcc47 directory.
+# We require gcc-4.7.x in the lang/gcc47-compiler directory.
 #
-_GCC_PKGBASE=		gcc47
-.  if !empty(PKGPATH:Mlang/gcc47)
+_GCC_PKGBASE=		gcc47-compiler
+.  if !empty(PKGPATH:Mlang/gcc47*)
 _IGNORE_GCC=		yes
 MAKEFLAGS+=		_IGNORE_GCC=yes
 .  endif
 .  if !defined(_IGNORE_GCC) && !empty(_LANGUAGES.gcc)
-_GCC_PKGSRCDIR=		../../lang/gcc47
-_GCC_DEPENDENCY=	gcc47>=${_GCC_REQD}:../../lang/gcc47
-_GCC_PKGSRCDIR+=	../../lang/gcc47-runtime
-_GCC_DEPENDENCY+=	gcc47-runtime>=${_GCC_REQD}:../../lang/gcc47-runtime
+_GCC_PKGSRCDIR=		../../lang/gcc47-compiler
+_GCC_DEPENDENCY=	gcc47-compiler>=${_GCC_REQD}:../../lang/gcc47-compiler
 .    if !empty(_LANGUAGES.gcc:Mc++) || \
         !empty(_LANGUAGES.gcc:Mfortran) || \
         !empty(_LANGUAGES.gcc:Mfortran77) || \
@@ -732,6 +736,14 @@ PREPEND_PATH+=	${_GCC_DIR}/bin
 .  for _dir_ in ${_GCC_PKGSRCDIR}
 .    include "${_dir_}/buildlink3.mk"
 .  endfor
+.endif
+
+# Add dependency on GCC runtime if requested.
+.if !empty(_USE_GCC_SHLIB:M[Yy][Ee][Ss]) && !empty(USE_PKGSRC_GCC_RUNTIME:M[Yy][Ee][Ss])
+#  Special case packages which are themselves a dependency of gcc runtime.
+.  if empty(PKGPATH:Mdevel/libtool-base) && empty(PKGPATH:Mdevel/binutils)
+.    include "../../lang/gcc47-runtime/buildlink3.mk"
+.  endif
 .endif
 
 .for _var_ in ${_GCC_VARS}
