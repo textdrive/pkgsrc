@@ -17,6 +17,7 @@ PKG_DESTDIR_SUPPORT=	user-destdir
 
 USE_TOOLS+=	bash:run gmake lex pax perl
 USE_FEATURES=	snprintf
+USE_GCC_RUNTIME=yes
 USE_MULTIARCH=	lib
 
 INSTALL_TARGET=	install-dev install-run

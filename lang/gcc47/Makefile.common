@@ -24,7 +24,7 @@ PATCHDIR?=		${.CURDIR}/../../lang/gcc47/patches
 
 NOT_FOR_PLATFORM=	Interix-*-*
 
-USE_TOOLS+=		gmake makeinfo sed:run
+USE_TOOLS+=		gmake sed:run
 
 PKG_DESTDIR_SUPPORT=	user-destdir
 
