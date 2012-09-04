@@ -1,7 +1,8 @@
-# $NetBSD: Makefile,v 1.104 2012/08/17 23:08:21 tron Exp $
+# $NetBSD: Makefile,v 1.106 2012/08/28 15:54:54 tron Exp $
 
 DISTNAME=	phpMyAdmin-${DIST_VERSION}-all-languages
 PKGNAME=	phpmyadmin-${DIST_VERSION:S/-//}
+PKGREVISION=	2
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=phpmyadmin/}
 EXTRACT_SUFX=	.tar.xz
@@ -12,17 +13,20 @@ COMMENT=	Set of PHP-scripts to adminstrate MySQL over the WWW
 LICENSE=	gnu-gpl-v2
 
 DEPENDS+=	${PHP_PKG_PREFIX}-bz2>=5.2.0:../../archivers/php-bz2
+DEPENDS+=	${PHP_PKG_PREFIX}-zip>=5.2.0:../../archivers/php-zip
 DEPENDS+=	${PHP_PKG_PREFIX}-zlib>=5.2.0:../../archivers/php-zlib
 DEPENDS+=	${PHP_PKG_PREFIX}-mbstring>=5.2.0:../../converters/php-mbstring
 DEPENDS+=	${PHP_PKG_PREFIX}-gettext>=5.2.0:../../devel/php-gettext
-DEPENDS+=	${PHP_PKG_PREFIX}-mysql{,i}>=5.2.0:../../databases/php-mysql
+DEPENDS+=	${PHP_PKG_PREFIX}-mysql>=5.2.0:../../databases/php-mysql
+DEPENDS+=	${PHP_PKG_PREFIX}-mysqli>=5.2.0:../../databases/php-mysqli
 DEPENDS+=	${PHP_PKG_PREFIX}-gd>=5.2.0:../../graphics/php-gd
 DEPENDS+=	${PHP_PKG_PREFIX}-mcrypt>=5.2.0:../../security/php-mcrypt
 DEPENDS+=	${PHP_PKG_PREFIX}-json>=5.2.0:../../textproc/php-json
 
 PKG_DESTDIR_SUPPORT=	user-destdir
 
-FILES_SUBST+=	CONF_INC_PHP=${CONF_INC_PHP:Q} PMCONFFILE=${PMCONFFILE:Q}
+FILES_SUBST+=	APACHE_GROUP=${APACHE_GROUP} APACHE_USER=${APACHE_USER}
+FILES_SUBST+=	PMSETUPDIR=${PMSETUPDIR} PMSETUPFILE=${PMSETUPFILE}
 PLIST_SUBST+=	DIST_VERSION=${DIST_VERSION:Q}
 MESSAGE_SUBST+=	CONF_INC_PHP=${CONF_INC_PHP} PMCONFFILE=${PMCONFFILE:Q} \
 		EXDIR=${EXDIR:Q}
@@ -43,6 +47,8 @@ PKG_GROUPS_VARS+=	APACHE_GROUP
 
 EXDIR=		${PREFIX}/share/examples/phpmyadmin
 PMCONFFILE=	${PKG_SYSCONFDIR}/config.inc.php
+PMSETUPDIR=	${VARBASE}/phpmyadmin
+PMSETUPFILE=	${PMSETUPDIR}/config.inc.php
 PMDIR=		${PREFIX}/share/phpmyadmin
 
 PKG_SYSCONFSUBDIR?=	phpmyadmin
@@ -208,6 +214,7 @@ INSTALL_DIRS+=	locale/zh_CN/LC_MESSAGES
 INSTALL_DIRS+=	locale/zh_TW
 INSTALL_DIRS+=	locale/zh_TW/LC_MESSAGES
 INSTALL_DIRS+=	scripts
+INSTALL_DIRS+=	setup
 INSTALL_DIRS+=	setup/frames
 INSTALL_DIRS+=	setup/lib
 INSTALL_DIRS+=	themes
@@ -230,7 +237,10 @@ INSTALLATION_DIRS+=	${PMDIR}/${dir}
 
 do-configure:
 	${SED} -e "s|@PMDIR@|${PMDIR}|g" ${FILESDIR}/phpmyadmin.conf	\
-		>${WRKDIR}/phpmyadmin.conf
+	  >${WRKDIR}/phpmyadmin.conf
+	cd ${WRKSRC}/libraries; 					\
+	${SED} -e "s#@@PMSETUPFILE@@#${PMSETUPFILE}#" vendor_config.php	\
+	  >vendor_config.php.pkgsrc
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.css ${DESTDIR}${PMDIR}
@@ -240,6 +250,7 @@ do-install:
 
 	${MV} ${DESTDIR}${PREFIX}/share/phpmyadmin/config.sample.inc.php \
 	  ${DESTDIR}${EXDIR}/config.inc.php
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${DESTDIR}${EXDIR}
 
 	${INSTALL_DATA} ${WRKSRC}/Documentation.html ${DESTDIR}${PMDIR}
 
@@ -261,8 +272,9 @@ do-install:
 	cd ${WRKSRC} && \
 	${INSTALL_DATA} ${DOC_FILES} ${DESTDIR}${PREFIX}/share/doc/phpmyadmin
 	${INSTALL_DATA} ${WRKDIR}/phpmyadmin.conf ${DESTDIR}${EXDIR}/apache.conf
-
-	${RM} -f ${DESTDIR}${PREFIX}/share/phpmyadmin/libraries/footer.inc.php.orig
+	${LN} -s ${PMCONFFILE} ${DESTDIR}${CONF_INC_PHP}
+	cd ${DESTDIR}${PREFIX}/share/phpmyadmin/libraries; \
+	${MV} -f vendor_config.php.pkgsrc vendor_config.php
 
 .include "../../lang/php/phpversion.mk"
 .include "../../mk/bsd.pkg.mk"

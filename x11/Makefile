@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.659 2012/08/12 21:30:03 wiz Exp $
+# $NetBSD: Makefile,v 1.662 2012/08/31 19:43:49 prlw1 Exp $
 #
 
 COMMENT=	Packages to support the X window system
@@ -66,6 +66,7 @@ SUBDIR+=	gnome-applets
 SUBDIR+=	gnome-control-center
 SUBDIR+=	gnome-desktop
 SUBDIR+=	gnome-desktop-sharp
+SUBDIR+=	gnome-desktop3
 SUBDIR+=	gnome-mag
 SUBDIR+=	gnome-panel
 SUBDIR+=	gnome-screensaver
@@ -101,6 +102,7 @@ SUBDIR+=	gtkmm-utils
 SUBDIR+=	gtksourceview
 SUBDIR+=	gtksourceview-sharp2
 SUBDIR+=	gtksourceview2
+SUBDIR+=	gtksourceview3
 SUBDIR+=	gtkstep
 SUBDIR+=	gtkterm2
 SUBDIR+=	hanterm

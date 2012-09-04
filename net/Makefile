@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.928 2012/08/20 12:18:00 wiz Exp $
+# $NetBSD: Makefile,v 1.931 2012/09/03 10:09:17 marino Exp $
 #
 
 COMMENT=	Networking tools
@@ -186,6 +186,7 @@ SUBDIR+=	hping
 SUBDIR+=	hping3
 SUBDIR+=	httping
 SUBDIR+=	httptunnel
+SUBDIR+=	iana-etc
 SUBDIR+=	icsi-finger
 SUBDIR+=	iftop
 SUBDIR+=	inadyn
@@ -237,6 +238,7 @@ SUBDIR+=	libdmapsharing
 SUBDIR+=	libdnet
 SUBDIR+=	libfetch
 SUBDIR+=	libgdata
+SUBDIR+=	libktorrent
 SUBDIR+=	liblive
 SUBDIR+=	libmms
 SUBDIR+=	libnice
@@ -338,7 +340,6 @@ SUBDIR+=	oidentd
 SUBDIR+=	oinkmaster
 SUBDIR+=	omniNotify
 SUBDIR+=	omniORB
-SUBDIR+=	openafs
 SUBDIR+=	openag
 SUBDIR+=	openh323
 SUBDIR+=	openntpd

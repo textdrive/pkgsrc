@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.550 2012/08/20 11:44:00 ryoon Exp $
+# $NetBSD: Makefile,v 1.552 2012/08/29 17:18:47 drochner Exp $
 #
 
 COMMENT=	System utilities
@@ -150,6 +150,7 @@ SUBDIR+=	gpart
 SUBDIR+=	grub
 SUBDIR+=	grub2
 SUBDIR+=	grun
+SUBDIR+=	gsettings-desktop-schemas
 SUBDIR+=	gst-plugins0.10-gio
 SUBDIR+=	gst-plugins0.10-gnomevfs
 SUBDIR+=	gtk-send-pr
@@ -223,6 +224,7 @@ SUBDIR+=	i810switch
 SUBDIR+=	iat
 SUBDIR+=	idesk
 SUBDIR+=	install-sh
+SUBDIR+=	intel-microcode-netbsd
 SUBDIR+=	ipa
 SUBDIR+=	ipmitool
 SUBDIR+=	ipw-firmware

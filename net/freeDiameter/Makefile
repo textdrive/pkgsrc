@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.1 2012/08/20 12:17:20 wiz Exp $
+# $NetBSD: Makefile,v 1.3 2012/08/25 22:39:23 dholland Exp $
 #
 
 DISTNAME=	1.1.2
@@ -17,9 +17,10 @@ DIST_SUBDIR=	freeDiameter
 
 WRKSRC=		${WRKDIR}/${PKGNAME_NOREV}
 USE_CMAKE=	yes
-CMAKE_ARGS+=    -DDISABLE_SCTP:BOOL=ON
+CMAKE_ARGS+=	-DDISABLE_SCTP:BOOL=ON
 USE_LANGUAGES=	c c++
-USE_TOOLS+=	bison pkg-config
+USE_TOOLS+=	bison flex pkg-config
+FLEX_REQD=	2.5.35
 
 .include "options.mk"
 

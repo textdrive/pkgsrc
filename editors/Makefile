@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.153 2012/08/04 14:08:06 drochner Exp $
+# $NetBSD: Makefile,v 1.155 2012/08/31 19:55:21 prlw1 Exp $
 #
 
 COMMENT=	Editors
@@ -41,6 +41,8 @@ SUBDIR+=	gate
 SUBDIR+=	gconf-editor
 SUBDIR+=	gedit
 SUBDIR+=	gedit-python
+SUBDIR+=	gedit3
+SUBDIR+=	gedit3-spell
 SUBDIR+=	ghex
 SUBDIR+=	gice
 SUBDIR+=	gnuserv
