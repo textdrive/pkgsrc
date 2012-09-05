@@ -1,4 +1,4 @@
-$NetBSD: CHANGES-2012,v 1.2784 2012/09/03 15:56:42 taca Exp $
+$NetBSD: CHANGES-2012,v 1.2798 2012/09/05 15:20:34 is Exp $
 
 Changes to the packages collection and infrastructure in 2012:
 
@@ -4318,3 +4318,22 @@ Changes to the packages collection and infrastructure in 2012:
 	Updated devel/ruby-rspec-expectations to 2.11.2 [taca 2012-09-03]
 	Updated devel/ruby-rspec-mocks to 2.11.2 [taca 2012-09-03]
 	Updated devel/ruby-rspec to 2.11.0 [taca 2012-09-03]
+	Updated devel/scmgit-base to 1.7.12 [adam 2012-09-04]
+	Updated devel/scmgit-docs to 1.7.12 [adam 2012-09-04]
+	Updated devel/scmgit to 1.7.12 [adam 2012-09-04]
+	Updated www/gitweb to 1.7.12 [adam 2012-09-04]
+	Updated sysutils/bup to 0.25rc1 [wiz 2012-09-04]
+	Updated devel/ruby-rspec-rails to 2.11.0 [taca 2012-09-04]
+	Updated devel/ruby-gettext_i18n_rails to 0.7.1 [taca 2012-09-04]
+	Updated www/php-apc to 3.1.13 [taca 2012-09-04]
+	Updated graphics/pear-Image_Canvas to 0.3.5 [taca 2012-09-04]
+	Updated www/contao211-translations to 201208130 [taca 2012-09-04]
+	Updated www/ap2-fcgid to 2.3.7 [taca 2012-09-04]
+	Updated sysutils/libvirt to 0.9.3nb7 [gls 2012-09-04]
+	Updated net/wireshark to 1.8.2nb2 [tron 2012-09-04]
+	Updated net/py-boto to 2.5.2 [wiz 2012-09-05]
+	Updated sysutils/duplicity to 0.6.19 [wiz 2012-09-05]
+	Removed cad/simian [dmcmahill 2012-09-05]
+	Removed cad/simian-docs [dmcmahill 2012-09-05]
+	Added devel/p5-List-AllUtils 0.0.3 [is 2012-09-05]
+	Added devel/p5-File-Slurp-Unicode 0.7.1 [is 2012-09-05]
