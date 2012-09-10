@@ -14,6 +14,7 @@ ONLY_FOR_PLATFORM=	${VDPAU_AVAILABLE_ON:S/$/-*-*/}
 
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
+USE_MULTIARCH=	lib
 USE_TOOLS+=	pkg-config gmake
 USE_LANGUAGES=	c c++
 CONFIGURE_ARGS+=	--disable-documentation
