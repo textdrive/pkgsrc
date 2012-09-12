@@ -1,8 +1,8 @@
-# $NetBSD: Makefile,v 1.13 2012/09/02 19:54:37 cheusov Exp $
+# $NetBSD: Makefile,v 1.15 2012/09/11 23:19:34 asau Exp $
 #
 
 DISTNAME=	distbb-0.45.1
-PKGREVISION=	1
+PKGREVISION=	2
 CATEGORIES=	pkgtools
 MASTER_SITES=	ftp://ftp.NetBSD.org/pub/NetBSD/misc/cheusov/distbb/ \
 		http://mova.org/~cheusov/pub/distbb/
@@ -12,7 +12,7 @@ HOMEPAGE=	http://mova.org/~cheusov/pub/distbb/
 COMMENT=	DISTributed Bulk Build tool for pkgsrc
 LICENSE=	2-clause-bsd
 
-DEPENDS+=	pkg_summary-utils>=0.58.3:../../pkgtools/pkg_summary-utils
+DEPENDS+=	pkg_summary-utils>=0.58.4:../../pkgtools/pkg_summary-utils
 DEPENDS+=	paexec>=0.16.0:../../parallel/paexec
 DEPENDS+=	runawk>=1.1.0:../../lang/runawk
 DEPENDS+=	pipestatus>=0.6.0:../../devel/pipestatus
@@ -29,8 +29,6 @@ REPLACE.runawk.old=	/usr/bin/env runawk
 REPLACE.runawk.new=	${PREFIX}/bin/runawk
 REPLACE_FILES.runawk=	gen_weights.in pkg_summary2build_deps.in \
 			distbb_grep.in gen_queue.in
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 EGDIR=			${PREFIX}/share/examples/distbb
 DOCDIR=			${PREFIX}/share/doc/distbb

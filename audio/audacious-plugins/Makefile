@@ -1,8 +1,8 @@
-# $NetBSD: Makefile,v 1.29 2012/06/14 07:45:15 sbd Exp $
+# $NetBSD: Makefile,v 1.31 2012/09/11 23:59:25 asau Exp $
 #
 
 DISTNAME=		audacious-plugins-1.5.1
-PKGREVISION=		21
+PKGREVISION=		22
 CATEGORIES=		audio
 MASTER_SITES=		http://distfiles.atheme.org/
 EXTRACT_SUFX=		.tgz
@@ -10,8 +10,6 @@ EXTRACT_SUFX=		.tgz
 MAINTAINER=		jfranz@bsdprojects.net
 HOMEPAGE=		http://audacious-media-player.org/
 COMMENT=		Plugins for Audacious media player
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 GNU_CONFIGURE=		yes
 USE_TOOLS+=		gmake intltool pkg-config msgfmt

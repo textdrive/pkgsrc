@@ -1,9 +1,9 @@
-# $NetBSD: Makefile,v 1.55 2012/05/12 07:37:51 wiz Exp $
+# $NetBSD: Makefile,v 1.57 2012/09/11 19:46:57 dholland Exp $
 #
 
 DISTNAME=		krb4-1.2.2
 PKGNAME=		kth-krb4-1.2.2
-PKGREVISION=		5
+PKGREVISION=		6
 CATEGORIES=		security net
 MASTER_SITES=		ftp://ftp.pdc.kth.se/pub/krb/src/
 
@@ -13,7 +13,8 @@ COMMENT=		Kerberos IV distribution from KTH
 
 CONFLICTS+=		arla-[0-9]*
 CONFLICTS+=		libdes-[0-9]*
-CONFLICTS=		man-pages-[0-9]*
+CONFLICTS+=		man-pages-[0-9]*
+CONFLICTS+=		heimdal-[0-9]*
 
 PKG_DESTDIR_SUPPORT=	user-destdir
 
@@ -21,6 +22,7 @@ CRYPTO=			yes
 
 USE_LIBTOOL=		yes
 GNU_CONFIGURE=		yes
+USE_TOOLS+=		yacc
 CONFIGURE_ARGS+=	--includedir=${PREFIX}/include/kerberosIV
 
 .include "../../mk/bsd.prefs.mk"

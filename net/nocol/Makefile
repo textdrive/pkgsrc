@@ -1,8 +1,8 @@
-# $NetBSD: Makefile,v 1.35 2012/08/31 11:18:20 he Exp $
+# $NetBSD: Makefile,v 1.37 2012/09/09 19:51:03 dholland Exp $
 #
 
 DISTNAME=		nocol-4.3.1
-PKGREVISION=		6
+PKGREVISION=		7
 CATEGORIES=		net
 MASTER_SITES=	http://www.netplex-tech.com/software/nocol/downloads/
 
@@ -12,6 +12,7 @@ COMMENT=		Extensible network and system monitoring utility
 
 PKG_DESTDIR_SUPPORT=	user-destdir
 
+MAKE_JOBS_SAFE=		no
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	./Configure
 CONFIGURE_ARGS+=	< ${WRKSRC}/answers

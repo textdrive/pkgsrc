@@ -1,8 +1,8 @@
-# $NetBSD: Makefile,v 1.21 2012/06/14 07:43:55 sbd Exp $
+# $NetBSD: Makefile,v 1.23 2012/09/12 00:24:40 asau Exp $
 #
 
 DISTNAME=	jack-rack-1.4.7
-PKGREVISION=	16
+PKGREVISION=	17
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jack-rack/}
 EXTRACT_SUFX=	.tar.bz2
@@ -11,8 +11,6 @@ MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	http://jack-rack.sourceforge.net/
 COMMENT=	Effects "rack" for JACK
 LICENSE=	gnu-gpl-v2
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 GNU_CONFIGURE=		yes
 USE_LIBTOOL=		yes

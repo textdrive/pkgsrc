@@ -1,7 +1,8 @@
-# $NetBSD: Makefile,v 1.7 2012/07/06 14:48:35 drochner Exp $
+# $NetBSD: Makefile,v 1.9 2012/09/11 23:04:20 asau Exp $
 #
 
 DISTNAME=		gcalctool-6.4.2.1
+PKGREVISION=		1
 CATEGORIES=		math gnome
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gcalctool/6.4/}
 EXTRACT_SUFX=		.tar.xz
@@ -10,8 +11,6 @@ MAINTAINER=		prlw1@cam.ac.uk
 HOMEPAGE=		http://live.gnome.org/Gcalctool
 COMMENT=		Desktop calculator for GNOME
 LICENSE=		gnu-gpl-v2
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 GNU_CONFIGURE=		YES
 CONFIGURE_ENV+=		HAVE_YACC=yes

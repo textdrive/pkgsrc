@@ -1,7 +1,8 @@
-# $NetBSD: Makefile,v 1.10 2012/08/30 07:54:29 drochner Exp $
+# $NetBSD: Makefile,v 1.12 2012/09/11 20:32:12 asau Exp $
 #
 
 DISTNAME=	gnome-chemistry-utils-0.12.13
+PKGREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://download-mirror.savannah.gnu.org/releases/gchemutils/0.12/
 EXTRACT_SUFX=	.tar.bz2
@@ -10,8 +11,6 @@ MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	http://gchemutils.nongnu.org/
 COMMENT=	GChemPaint, a 2D chemical editor and other programs
 LICENSE=	gnu-gpl-v2 AND gnu-fdl-v1.1
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes

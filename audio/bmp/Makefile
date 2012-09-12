@@ -1,11 +1,10 @@
-# $NetBSD: Makefile,v 1.44 2012/06/14 07:44:24 sbd Exp $
+# $NetBSD: Makefile,v 1.46 2012/09/11 23:59:26 asau Exp $
 #
 
 BMP_ENABLE_ENCODERS=	yes
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 .include "Makefile.common"
-PKGREVISION=		19
+PKGREVISION=		20
 
 USE_TOOLS+=		unzip:run
 

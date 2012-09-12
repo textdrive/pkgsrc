@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.32 2012/06/14 07:44:08 sbd Exp $
+# $NetBSD: Makefile,v 1.34 2012/09/12 11:28:48 jperkin Exp $
 
 DISTNAME=		avahi-0.6.31
-PKGREVISION=		1
+PKGREVISION=		2
 CATEGORIES=		net
 MASTER_SITES=		http://avahi.org/download/
 
@@ -17,7 +17,7 @@ USE_LIBTOOL=		YES
 USE_MULTIARCH=		lib
 USE_PKGINSTALL=		YES
 USE_PKGLOCALEDIR=	YES
-USE_TOOLS+=		pkg-config gmake intltool msgfmt
+USE_TOOLS+=		pkg-config gmake intltool msgfmt xgettext
 MAKE_JOBS_SAFE=		no
 
 PKGCONFIG_OVERRIDE+=	avahi-client.pc.in

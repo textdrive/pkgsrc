@@ -1,9 +1,9 @@
-# $NetBSD: Makefile,v 1.6 2012/08/29 11:22:16 obache Exp $
+# $NetBSD: Makefile,v 1.8 2012/09/11 23:04:17 asau Exp $
 #
 
 PKGNAME=	cgal-3.9
 DISTNAME=	CGAL-3.9
-PKGREVISION=	6
+PKGREVISION=	7
 CATEGORIES=	math
 MASTER_SITES=	https://gforge.inria.fr/frs/download.php/29125/
 
@@ -13,8 +13,6 @@ COMMENT=	Computational Geometry Algorithms Library
 LICENSE=	gnu-lgpl-v3
 
 FETCH_USING=	curl
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 USE_CMAKE=	yes
 USE_LANGUAGES=	c c++
