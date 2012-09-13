@@ -50,6 +50,7 @@ CONFIGURE_SCRIPT=	./Configure
 CONFIGURE_ARGS+=	-sde
 CONFIGURE_ARGS+=	-D ccflags=${CFLAGS:Q}
 CONFIGURE_ARGS+=	-D ldflags=${LDFLAGS:Q}
+CONFIGURE_ARGS+=	-D startperl=${PREFIX}/bin/perl
 MAKE_ENV+=		LC_ALL="C"
 
 TEST_TARGET=		test
@@ -63,6 +64,7 @@ SUBST_VARS.policysh+=	MACHINE_ARCH
 SUBST_VARS.policysh+=	LOWER_OPSYS
 SUBST_VARS.policysh+=	CC
 SUBST_VARS.policysh+=	CFLAGS
+SUBST_VARS.policysh+=	BINARCHSUFFIX
 SUBST_VARS.policysh+=	PERL5_PREFIX
 SUBST_VARS.policysh+=	PERL5_SITEPREFIX
 SUBST_VARS.policysh+=	PERL5_VENDORPREFIX
@@ -81,6 +83,7 @@ SUBST_VARS.policysh+=	PKGMANDIR
 SUBST_VARS.policysh+=	LOCALBASE
 SUBST_VARS.policysh+=	PTHREAD_LDFLAGS
 
+#
 .if ${OPSYS} == "Darwin"
 #
 # The Perl build attempts to work around case-insensitivity problems on
@@ -327,7 +330,7 @@ post-build:
 		-e "s,@PKGMANDIR@,"${PKGMANDIR:Q}",g"			\
 		${FILESDIR}/perllink.in > ${WRKDIR}/perllink.sh
 
-INSTALLATION_DIRS=	bin ${PKGMANDIR}/man1
+INSTALLATION_DIRS=	bin${BINARCHSUFFIX} ${PKGMANDIR}/man1
 PERL5_PACKLIST_DIR_cmd=	for conf in ${WRKSRC}*/config.sh; do \
 				if [ -f $$conf ]; then \
 					. $$conf; \
@@ -346,14 +349,14 @@ PLIST_SRC=		${WRKDIR}/.PLIST_SRC
 post-install: perl5-post-install
 
 perl5-post-install:
-	${RUN}if ${TEST} -x ${DESTDIR}${PREFIX}/bin/a2p; then		\
-		strip ${DESTDIR}${PREFIX}/bin/a2p;			\
+	${RUN}if ${TEST} -x ${DESTDIR}${PREFIX}/bin${BINARCHSUFFIX}/a2p; then		\
+		strip ${DESTDIR}${PREFIX}/bin${BINARCHSUFFIX}/a2p;			\
 	fi
 	${RUN}${INSTALL_SCRIPT} ${WRKDIR}/perllink.sh ${DESTDIR}${PERL5_SCRIPTDIR}/perllink;	\
 	${INSTALL_MAN} ${FILESDIR}/perllink.1 ${DESTDIR}${PERL5_MAN1DIR}/perllink.1;	\
-	${RM} -f ${DESTDIR}${PREFIX}/bin/perllink				\
+	${RM} -f ${DESTDIR}${PREFIX}/bin${BINARCHSUFFIX}/perllink				\
 		${DESTDIR}${PREFIX}/${PKGMANDIR}/man1/perllink.1;		\
-	${LN} -s ${PERL5_SCRIPTDIR}/perllink ${DESTDIR}${PREFIX}/bin/perllink;	\
+	${LN} -s ${PERL5_SCRIPTDIR}/perllink ${DESTDIR}${PREFIX}/bin${BINARCHSUFFIX}/perllink;	\
 	${LN} -s ${PERL5_MAN1DIR}/perllink.1					\
 		${DESTDIR}${PREFIX}/${PKGMANDIR}/man1/perllink.1;	\
 	{ ${CAT} ${PKGDIR}/PLIST;					\
@@ -361,7 +364,7 @@ perl5-post-install:
 	  ${ECHO} "${PERL5_MAN1DIR}/perllink.1";			\
 	} | ${SED} -e "s,^"${PREFIX:Q}"/,," > ${PLIST_SRC}
 .if ${OPSYS} == "Haiku"
-	${CHMOD} a+x ${DESTDIR}${PREFIX}/bin/perl
+	${CHMOD} a+x ${DESTDIR}${PREFIX}/bin${BINARCHSUFFIX}/perl
 .endif
 
 .include "packlist.mk"
