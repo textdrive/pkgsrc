@@ -1,6 +1,7 @@
-# $NetBSD: Makefile,v 1.96 2012/09/11 17:13:44 asau Exp $
+# $NetBSD: Makefile,v 1.98 2012/09/15 10:04:33 obache Exp $
 
 DISTNAME=		qemu-1.2.0
+PKGREVISION=		1
 CATEGORIES=		emulators
 MASTER_SITES=		http://wiki.qemu.org/download/
 EXTRACT_SUFX=		.tar.bz2
@@ -86,17 +87,17 @@ UE_ARCHS+=		ppc ppc64 ppc64abi32 sh4 sh4eb sparc sparc32plus
 UE_ARCHS+=		sparc64 x86_64 microblazeel s390x unicore32
 
 .if ${OPSYS} == "NetBSD"
-.if (!empty(OS_VERSION:M5.99.*) || !empty(OS_VERSION:M[6-9].*))
+.  if (!empty(OS_VERSION:M5.99.*) || !empty(OS_VERSION:M[6-9].*))
 # XXX
 # i386 and x86_64 user emul require newer binutils for PROVIDE_HIDDEN()
 # http://git.qemu.org/qemu.git/commit/?id=845f2c2812d9ed24b36c02a3d06ee83aeafe8b49
 # but binutils-2.19 was enabled around 5.99.22:
 # http://cvsweb.NetBSD.org/bsdweb.cgi/src/share/mk/bsd.own.mk#rev1.594
 USER_EMUL=		i386 x86_64 sparc sparc64
-.else
+.  else
 CONFIGURE_ARGS+=	--disable-bsd-user
 USER_EMUL=
-.endif
+.  endif
 PLIST.nbd=		YES
 .elif !empty(OPSYS:M*BSD) || !empty(OPSYS:MDragonFly)
 USER_EMUL=		i386 x86_64 sparc sparc64
@@ -104,7 +105,6 @@ PLIST.nbd=		YES
 .elif !empty(OPSYS:MDarwin)
 USER_EMUL=
 CONFIGURE_ARGS+=	--disable-bsd-user
-CONFIGURE_ARGS+=	--disable-darwin-user
 PLIST.nbd=		YES
 .elif !empty(OPSYS:MLinux)
 USER_EMUL=		${UE_ARCHS}

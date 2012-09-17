@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.1646 2012/09/10 12:31:24 sno Exp $
+# $NetBSD: Makefile,v 1.1651 2012/09/16 21:50:16 cheusov Exp $
 #
 
 COMMENT=	Development utilities
@@ -154,6 +154,7 @@ SUBDIR+=	dconf
 SUBDIR+=	dconf-editor
 SUBDIR+=	ddd
 SUBDIR+=	dejagnu
+SUBDIR+=	delta
 SUBDIR+=	dev86
 SUBDIR+=	devIL
 SUBDIR+=	devhelp
@@ -1094,6 +1095,7 @@ SUBDIR+=	p5-Sub-Installer
 SUBDIR+=	p5-Sub-Name
 SUBDIR+=	p5-Sub-Override
 SUBDIR+=	p5-Sub-Uplevel
+SUBDIR+=	p5-Syntax-Keyword-Junction
 SUBDIR+=	p5-Sys-Syscall
 SUBDIR+=	p5-System-Command
 SUBDIR+=	p5-TAP-Formatter-HTML
@@ -1244,6 +1246,7 @@ SUBDIR+=	p5-sapnwrfc
 SUBDIR+=	p5-signatures
 SUBDIR+=	p5-strictures
 SUBDIR+=	p5-subversion
+SUBDIR+=	p5-syntax
 SUBDIR+=	p5-version
 SUBDIR+=	palmpower
 SUBDIR+=	pango
@@ -1424,6 +1427,7 @@ SUBDIR+=	ruby-gnome2-atk
 SUBDIR+=	ruby-gnome2-gio
 SUBDIR+=	ruby-gnome2-glib
 SUBDIR+=	ruby-gnome2-pango
+SUBDIR+=	ruby-hashery
 SUBDIR+=	ruby-heckle
 SUBDIR+=	ruby-highline
 SUBDIR+=	ruby-hike
@@ -1513,6 +1517,7 @@ SUBDIR+=	scmcvs
 SUBDIR+=	scmgit
 SUBDIR+=	scmgit-base
 SUBDIR+=	scmgit-docs
+SUBDIR+=	scmgit-gitk
 SUBDIR+=	scons
 SUBDIR+=	sdcc
 SUBDIR+=	semantic

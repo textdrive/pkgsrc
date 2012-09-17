@@ -1,4 +1,4 @@
-# $NetBSD: phpversion.mk,v 1.21 2012/08/17 15:37:30 taca Exp $
+# $NetBSD: phpversion.mk,v 1.23 2012/09/16 20:03:50 cheusov Exp $
 #
 # This file selects a PHP version, based on the user's preferences and
 # the installed packages. It does not add a dependency on the PHP
@@ -13,6 +13,14 @@
 #	Possible: 53 54
 #	Default: 53
 #
+# PHP_VERSION_REQD
+#	PHP version to use. This is a user variable and
+#	should not be set in packages.
+#	Normally it is used by bulk build tools.
+#
+#	Possible: ${PHP_VERSIONS_ACCEPTED}
+#	Default:  ${PHP_VERSION_DEFAULT}
+#
 # === Package-settable variables ===
 #
 # PHP_VERSIONS_ACCEPTED
@@ -20,13 +28,6 @@
 #
 #	Possible: 53 54
 #	Default: 53 54
-#
-# PHP_VERSION_REQD
-#	If the package works only with a specific PHP version, this
-#	variable can be used to force it.
-#
-#	Possible: (undefined) 53 54
-#	Default: (undefined)
 #
 # === Variables defined by this file ===
 #
@@ -73,8 +74,8 @@ _SYS_VARS.php=	PKG_PHP_VERSION PKG_PHP PHPPKGSRCDIR PHP_PKG_PREFIX \
 
 .include "../../mk/bsd.prefs.mk"
 
-PHP53_VERSION=			5.3.16
-PHP54_VERSION=			5.4.6
+PHP53_VERSION=			5.3.17
+PHP54_VERSION=			5.4.7
 
 PHP_VERSION_DEFAULT?=		53
 PHP_VERSIONS_ACCEPTED?=		53 54

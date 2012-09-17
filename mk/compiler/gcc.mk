@@ -1,4 +1,4 @@
-# $NetBSD: gcc.mk,v 1.125 2012/07/27 10:34:00 jperkin Exp $
+# $NetBSD: gcc.mk,v 1.129 2012/09/17 04:43:56 obache Exp $
 #
 # This is the compiler definition for the GNU Compiler Collection.
 #
@@ -18,6 +18,10 @@
 #
 #	This should be disabled only for debugging.
 #
+# USE_PKGSRC_GCC_RUNTIME
+#	When set to "yes", the runtime gcc libraries (libgcc, libstdc++
+#	etc) will be used from pkgsrc rather than the native compiler.
+#
 # Package-settable variables:
 #
 # GCC_REQD
@@ -31,6 +35,12 @@
 #	known not to build on some platforms, e.g. Darwin.  If gcc3 is
 #	required, set GCC_REQD=3.0 so that we do not try to pull in
 #	lang/gcc3 unnecessarily and have it fail.
+#
+# USE_GCC_RUNTIME
+#	Packages which build shared libraries but do not use libtool to
+#	do so should define this variable.  It is used to determine whether
+#	the gcc runtime should be depended upon when a user has enabled
+#	USE_PKGSRC_GCC_RUNTIME.
 #
 # System-defined variables:
 #
@@ -81,18 +91,13 @@ _DEF_VARS.gcc=	\
 
 USE_NATIVE_GCC?=	no
 USE_PKGSRC_GCC?=	no
+USE_PKGSRC_GCC_RUNTIME?=no
 
 GCC_REQD+=	2.8.0
 
 # gcc2 doesn't support c99 and amd64
 .if !empty(USE_LANGUAGES:Mc99) || ${MACHINE_ARCH} == "x86_64"
 GCC_REQD+=	3.0
-.endif
-
-# On systems which do not use the GNU linker, gcc will link against libgcc
-# when building shared libraries, so we mandate it as a dependency.
-.if ${OPSYS} == "SunOS" && (defined(USE_LIBTOOL) || defined(USE_GCC_RUNTIME))
-_USE_GCC_SHLIB=	yes
 .endif
 
 # Only one compiler defined here supports Ada: lang/gcc-aux
@@ -418,16 +423,16 @@ _USE_GCC_SHLIB?=	yes
 .  endif
 .elif !empty(_NEED_GCC47:M[yY][eE][sS])
 #
-# We require gcc-4.7.x in the lang/gcc47-compiler directory.
+# We require gcc-4.7.x in the lang/gcc47 directory.
 #
-_GCC_PKGBASE=		gcc47-compiler
-.  if !empty(PKGPATH:Mlang/gcc47*)
+_GCC_PKGBASE=		gcc47
+.  if !empty(PKGPATH:Mlang/gcc47)
 _IGNORE_GCC=		yes
 MAKEFLAGS+=		_IGNORE_GCC=yes
 .  endif
 .  if !defined(_IGNORE_GCC) && !empty(_LANGUAGES.gcc)
-_GCC_PKGSRCDIR=		../../lang/gcc47-compiler
-_GCC_DEPENDENCY=	gcc47-compiler>=${_GCC_REQD}:../../lang/gcc47-compiler
+_GCC_PKGSRCDIR=		../../lang/gcc47
+_GCC_DEPENDENCY=	gcc47>=${_GCC_REQD}:../../lang/gcc47
 .    if !empty(_LANGUAGES.gcc:Mc++) || \
         !empty(_LANGUAGES.gcc:Mfortran) || \
         !empty(_LANGUAGES.gcc:Mfortran77) || \
@@ -488,6 +493,20 @@ _GCC_PKGSRCDIR+=	../../lang/gcc3-objc
 _GCC_DEPENDENCY+=	gcc3-objc>=${_GCC_REQD}:../../lang/gcc3-objc
 _USE_GCC_SHLIB?=	yes
 .  endif
+.endif
+
+# When not using the GNU linker, gcc will always link shared libraries against
+# the shared version of libgcc, and so _USE_GCC_SHLIB needs to be enabled on
+# platforms with non-GNU linkers, such as SunOS.
+#
+# However, we cannot simply do this by default as it will create circular
+# dependencies in packages which are required to build gcc itself, and so we
+# enable it based on USE_LIBTOOL for the majority of packages, and support
+# USE_GCC_RUNTIME for packages which create shared libraries but do not use
+# libtool to do so.
+#
+.if ${OPSYS} == "SunOS" && (defined(USE_LIBTOOL) || defined(USE_GCC_RUNTIME))
+_USE_GCC_SHLIB= yes
 .endif
 
 .if !empty(USE_NATIVE_GCC:M[yY][eE][sS]) && !empty(_IS_BUILTIN_GCC:M[yY][eE][sS])
@@ -738,11 +757,11 @@ PREPEND_PATH+=	${_GCC_DIR}/bin
 .  endfor
 .endif
 
-# Add dependency on GCC runtime if requested.
-.if !empty(_USE_GCC_SHLIB:M[Yy][Ee][Ss]) && !empty(USE_PKGSRC_GCC_RUNTIME:M[Yy][Ee][Ss])
+# Add dependency on GCC libraries if requested.
+.if (defined(_USE_GCC_SHLIB) && !empty(_USE_GCC_SHLIB:M[Yy][Ee][Ss])) && !empty(USE_PKGSRC_GCC_RUNTIME:M[Yy][Ee][Ss])
 #  Special case packages which are themselves a dependency of gcc runtime.
 .  if empty(PKGPATH:Mdevel/libtool-base) && empty(PKGPATH:Mdevel/binutils)
-.    include "../../lang/gcc47-runtime/buildlink3.mk"
+.    include "../../lang/gcc47-libs/buildlink3.mk"
 .  endif
 .endif
 
