@@ -36,7 +36,10 @@ GCC_SUBPREFIX=		${GCC_PKGNAME}
 GCC_PREFIX=		${GCC_PKG_PREFIX}/${GCC_SUBPREFIX}
 
 .if defined(_PKGSRC_BARRIER) && exists(${GCC_PREFIX}/bin/gcc)
-TARGET_TRIPLE!=		${GCC_PREFIX}/bin/gcc -dumpmachine
+# For multiarch we need a consistent directory which does not change based
+# upon ABI.
+TARGET_TRIPLE=		runtime
+#TARGET_TRIPLE!=	${GCC_PREFIX}/bin/gcc -dumpmachine
 .endif
 
 .include "../../mk/bsd.prefs.mk"
