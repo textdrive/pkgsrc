@@ -50,7 +50,6 @@ CONFIGURE_SCRIPT=	./Configure
 CONFIGURE_ARGS+=	-sde
 CONFIGURE_ARGS+=	-D ccflags=${CFLAGS:Q}
 CONFIGURE_ARGS+=	-D ldflags=${LDFLAGS:Q}
-CONFIGURE_ARGS+=	-D startperl=${PREFIX}/bin/perl
 MAKE_ENV+=		LC_ALL="C"
 
 TEST_TARGET=		test
