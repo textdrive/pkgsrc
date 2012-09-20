@@ -1,4 +1,4 @@
-$NetBSD: CHANGES-2012,v 1.3026 2012/09/16 22:08:31 pettai Exp $
+$NetBSD: CHANGES-2012,v 1.3032 2012/09/20 12:46:09 darcy Exp $
 
 Changes to the packages collection and infrastructure in 2012:
 
@@ -4650,3 +4650,9 @@ Changes to the packages collection and infrastructure in 2012:
 	Updated net/nmap to 6.01 [pettai 2012-09-16]
 	mk/bsd.pkg.mk: started freeze for pkgsrc-2012Q3 branch [wiz 2012-09-16]
 	Updated net/nsd to 3.2.13 [pettai 2012-09-16]
+	Updated print/cups to 1.5.4 [bouyer 2012-09-18]
+	Updated mail/thunderbird10 to 10.0.7 [ryoon 2012-09-18]
+	Updated mail/thunderbird10-l10n to 10.0.7 [ryoon 2012-09-18]
+	Updated devel/jenkins to 1.466.2 [ryoon 2012-09-19]
+	Updated misc/calibre to 0.8.69 [ryoon 2012-09-19]
+	Updated textproc/py-docutils to 0.9 [darcy 2012-09-20]
