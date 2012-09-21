@@ -97,7 +97,7 @@ lddlflags="@LOCLIBRPATHFLAGS@ \$lddlflags"
 # Set pkgsrc defaults for library and header search paths:
 # nail down the directories in which headers and libraries of
 # locally-installed software may be found.
-loclibpth="@LOCALBASE@/lib"
+loclibpth="@LOCALBASE@/lib@LIBARCHSUFFIX@"
 locincpth="@LOCALBASE@/include"
 
 # Set pkgsrc defaults for "plateform"/general path used to 
