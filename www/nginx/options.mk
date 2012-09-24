@@ -3,7 +3,7 @@
 PKG_OPTIONS_VAR=	PKG_OPTIONS.nginx
 PKG_SUPPORTED_OPTIONS=	dav flv gtools inet6 mail-proxy memcache naxsi pcre \
 			push realip ssl sub uwsgi image-filter upload debug \
-			status passenger
+			status nginx-autodetect-cflags passenger
 PKG_SUGGESTED_OPTIONS=	inet6 pcre ssl
 
 PLIST_VARS+=		naxsi uwsgi
