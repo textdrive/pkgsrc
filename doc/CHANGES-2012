@@ -1,4 +1,4 @@
-$NetBSD: CHANGES-2012,v 1.3038 2012/09/24 10:30:33 ryoon Exp $
+$NetBSD: CHANGES-2012,v 1.3066 2012/09/30 22:11:45 dholland Exp $
 
 Changes to the packages collection and infrastructure in 2012:
 
@@ -4719,3 +4719,29 @@ Changes to the packages collection and infrastructure in 2012:
 	Updated x11/xvidcap-gtk2 to 1.1.3nb18 [ryoon 2012-09-22]
 	Updated sysutils/xentools41 to 4.1.3nb1 [bouyer 2012-09-23]
 	Updated multimedia/fuppes to 0.660 [ryoon 2012-09-24]
+	Updated net/nagios-nsca to 2.9.1 [manu 2012-09-24]
+	Updated graphics/sane-backends to 1.0.22nb3 [wiz 2012-09-24]
+	Updated converters/TECkit to 2.5.1nb1 [sbd 2012-09-25]
+	Updated devel/php-memcache to 2.2.7 [taca 2012-09-25]
+	Updated devel/xulrunner to 15.0.1nb2 [sbd 2012-09-26]
+	Updated emulators/qemu to 1.2.0nb2 [sbd 2012-09-26]
+	Updated x11/xf86-input-mouse to 1.7.2nb2 [liamjfoy 2012-09-26]
+	Updated net/rdist6 to 0.94 [christos 2012-09-26]
+	Updated chat/ejabberd to 2.1.10nb1 [tron 2012-09-26]
+	Updated www/contao211 to 2.11.5nb1 [taca 2012-09-27]
+	Updated www/contao211-translations to 201209250 [taca 2012-09-27]
+	Updated lang/swi-prolog-lite to 5.11.18nb1 [sbd 2012-09-28]
+	Updated audio/xmcd to 3.0.2nb13 [dholland 2012-09-28]
+	Updated lang/tcl-otcl to 1.14 [sbd 2012-09-28]
+	Updated ham/fldigi to 3.21.52 [gdt 2012-09-28]
+	Updated textproc/libplist to 1.8nb2 [dholland 2012-09-29]
+	Updated games/simgear to 2.8.0 [dholland 2012-09-30]
+	Updated pkgtools/url2pkg to 2.15 [asau 2012-09-30]
+	Updated games/flightgear to 2.8.0 [dholland 2012-09-30]
+	mk/bsd.pkg.mk: freeze ended for pkgsrc-2012Q3 branch [wiz 2012-09-30]
+	Added www/p5-HTML-Template-Expr version 0.07 [wiz 2012-09-30]
+	Updated games/flightgear-data to 2.8.0 [dholland 2012-09-30]
+	Updated chat/ejabberd to 2.1.11 [tron 2012-09-30]
+	Added devel/userspace-rcu version 0.7.3 [pettai 2012-09-30]
+	Updated benchmark/thrulay to 0.9 [adam 2012-10-01]
+	Updated misc/rlwrap to 0.37 [dholland 2012-09-30]

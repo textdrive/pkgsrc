@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.103 2012/09/23 05:36:24 obache Exp $
+# $NetBSD: Makefile,v 1.105 2012/09/29 20:10:35 dholland Exp $
 
 PKGREVISION=	2
 

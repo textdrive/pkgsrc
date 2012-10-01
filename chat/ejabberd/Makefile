@@ -1,8 +1,9 @@
-# $NetBSD: Makefile,v 1.26 2012/06/11 13:11:11 fhajny Exp $
+# $NetBSD: Makefile,v 1.29 2012/09/30 21:38:04 tron Exp $
 
-DISTNAME=	ejabberd-2.1.10
+DISTNAME=	ejabberd-2.1.11
 CATEGORIES=	chat
-MASTER_SITES=	http://www.process-one.net/downloads/ejabberd/${PKGVERSION}/
+MASTER_SITES=	http://www.process-one.net/downloads/ejabberd/${PKGVERSION_NOREV}/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	http://www.ejabberd.im/
@@ -31,6 +32,7 @@ CONFIGURE_ARGS+=	--with-zlib=${BUILDLINK_PREFIX.zlib}
 CONFIGURE_ARGS+=	--with-expat=${BUILDLINK_PREFIX.expat}
 CONFIGURE_ARGS+=	--with-libiconv=${BUILDLINK_PREFIX.iconv}
 CONFIGURE_ARGS+=	--with-erlang=${BUILDLINK_PREFIX.erlang}
+CONFIGURE_ARGS+=	--sysconfdir=${PKG_SYSCONFBASEDIR}
 
 CONFIGURE_DIRS+=	src
 BUILD_DIRS+=		src
