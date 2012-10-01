@@ -172,8 +172,13 @@ SUBST_MESSAGE.vars=	Substituting multiarch vars.
 SUBST_STAGE.vars=	pre-configure
 SUBST_FILES.vars=	Makefile.pre.in Lib/distutils/sysconfig.py Lib/sysconfig.py Modules/getpath.c
 SUBST_SED.vars=		-e 's,@LIBARCHSUFFIX@,${LIBARCHSUFFIX},'
+.if !empty(MULTIARCH:M[Yy][Ee][Ss])
 SUBST_SED.vars+=	-e 's,@LIBARCHSUFFIX.32@,${LIBARCHSUFFIX.32},'
 SUBST_SED.vars+=	-e 's,@LIBARCHSUFFIX.64@,${LIBARCHSUFFIX.64},'
+.else
+SUBST_SED.vars+=	-e 's,@LIBARCHSUFFIX.32@,,'
+SUBST_SED.vars+=	-e 's,@LIBARCHSUFFIX.64@,,'
+.endif
 
 post-extract:
 	${MV} ${WRKSRC}/Lib/smtpd.py ${WRKSRC}/Lib/smtpd${PY_VER_SUFFIX}.py
