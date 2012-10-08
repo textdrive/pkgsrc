@@ -1,16 +1,14 @@
-# $NetBSD: Makefile,v 1.18 2012/09/15 10:03:42 obache Exp $
+# $NetBSD: Makefile,v 1.20 2012/10/02 23:48:04 asau Exp $
 #
 
 DISTNAME=	paman-0.9.4
-PKGREVISION=	15
+PKGREVISION=	16
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/paman/
 
 MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	http://0pointer.de/lennart/projects/paman/
 COMMENT=	GTK frontend for the PulseAudio sound server
-
-PKG_DESTDIR_SUPPORT=   user-destdir
 
 GNU_CONFIGURE=	yes
 USE_TOOLS+=	pkg-config gmake

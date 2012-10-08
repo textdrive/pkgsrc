@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.23 2012/09/15 10:03:54 obache Exp $
+# $NetBSD: Makefile,v 1.25 2012/10/03 00:02:42 asau Exp $
 
 DISTNAME=	pidgin-icb-20070505
-PKGREVISION=	21
+PKGREVISION=	22
 CATEGORIES=	chat
 MASTER_SITES=	http://nic.com.pl/~alek/pidgin-icb/
 
@@ -13,7 +13,6 @@ USE_TOOLS+=	pkg-config
 
 USE_LIBTOOL=	yes
 NO_CONFIGURE=	yes
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 CFLAGS+=	`pkg-config pidgin --cflags`
 LDFLAGS+=	-module -avoid-version -rpath ${PIDGIN_PLUGIN_DIR}	\

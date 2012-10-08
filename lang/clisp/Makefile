@@ -1,8 +1,8 @@
-# $NetBSD: Makefile,v 1.90 2012/09/27 10:51:47 jperkin Exp $
+# $NetBSD: Makefile,v 1.92 2012/10/02 20:11:37 asau Exp $
 #
 
 DISTNAME=		clisp-2.49
-PKGREVISION=		11
+PKGREVISION=		12
 CATEGORIES=		lang
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=clisp/}
 #EXTRACT_SUFX=		.tar.bz2
@@ -18,8 +18,6 @@ NOT_FOR_PLATFORM=	*-*-sparc64
 NOT_FOR_PLATFORM+=	*-*-arm
 
 PKG_INSTALLATION_TYPES= overwrite pkgviews
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 MAKE_JOBS_SAFE=		no
 

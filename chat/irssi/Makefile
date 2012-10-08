@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.59 2012/09/15 10:03:50 obache Exp $
+# $NetBSD: Makefile,v 1.61 2012/10/03 21:54:01 wiz Exp $
 
 DISTNAME=		${IRSSI_DISTNAME}
-PKGREVISION=		5
+PKGREVISION=		6
 CATEGORIES=		chat
 MASTER_SITES=		http://www.irssi.org/files/
 EXTRACT_SUFX=		${IRSSI_EXTRACT_SUFX}
@@ -10,8 +10,6 @@ MAINTAINER=		pkgsrc-users@NetBSD.org
 HOMEPAGE=		http://www.irssi.org/
 COMMENT=		Secure and modular IRC client with text mode user interface
 LICENSE=		gnu-gpl-v2
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 .include "../../mk/bsd.prefs.mk"
 .include "Makefile.common"

@@ -1,8 +1,8 @@
-# $NetBSD: Makefile,v 1.86 2012/09/15 10:04:03 obache Exp $
+# $NetBSD: Makefile,v 1.88 2012/10/02 21:25:21 asau Exp $
 #
 
 DISTNAME=		libgnomedb-3.0.0
-PKGREVISION=		18
+PKGREVISION=		19
 CATEGORIES=		databases gnome
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgnomedb/3.0/}
 EXTRACT_SUFX=		.tar.bz2
@@ -10,8 +10,6 @@ EXTRACT_SUFX=		.tar.bz2
 MAINTAINER=		pkgsrc-users@NetBSD.org
 HOMEPAGE=		http://www.gnome-db.org/
 COMMENT=		GNOME2 database library
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 USE_TOOLS+=		gmake intltool msgfmt pkg-config
 USE_LIBTOOL=		YES

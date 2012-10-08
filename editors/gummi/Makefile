@@ -1,8 +1,8 @@
-# $NetBSD: Makefile,v 1.5 2012/09/15 10:04:27 obache Exp $
+# $NetBSD: Makefile,v 1.7 2012/10/03 11:43:34 asau Exp $
 #
 
 DISTNAME=		gummi-0.6.4
-PKGREVISION=		4
+PKGREVISION=		5
 CATEGORIES=		editors
 MASTER_SITES=		http://dev.midnightcoding.org/attachments/download/298/
 
@@ -11,7 +11,6 @@ HOMEPAGE=		http://dev.midnightcoding.org/projects/gummi
 COMMENT=		Gummi is a LaTeX editor, written in C/GTK+
 LICENSE=		mit
 
-PKG_DESTDIR_SUPPORT=	user-destdir
 USE_TOOLS+= 		pkg-config intltool msgfmt
 
 # we need some latex, but not all

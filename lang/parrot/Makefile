@@ -1,9 +1,10 @@
-# $NetBSD: Makefile,v 1.64 2012/08/30 11:56:07 he Exp $
+# $NetBSD: Makefile,v 1.66 2012/10/03 21:56:20 wiz Exp $
 #
 
 VERSION=		4.7.0
 RTYPE=			devel
 DISTNAME=		parrot-${VERSION}
+PKGREVISION=		1
 CATEGORIES=		lang
 MASTER_SITES=		ftp://ftp.parrot.org/pub/parrot/releases/${RTYPE}/${VERSION}/
 
@@ -12,7 +13,6 @@ HOMEPAGE=		http://www.parrotcode.org/
 COMMENT=		Virtual machine made to run Perl 6 and other languages
 LICENSE=		artistic-2.0
 
-PKG_DESTDIR_SUPPORT=	user-destdir
 USE_LANGUAGES=		c c++
 USE_TOOLS+=		perl
 PTHREAD_OPTS+=		require

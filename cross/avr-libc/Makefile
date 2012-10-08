@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.23 2012/08/30 08:00:17 drochner Exp $
+# $NetBSD: Makefile,v 1.25 2012/10/03 21:54:11 wiz Exp $
 
 DISTNAME=		avr-libc-1.6.7
-PKGREVISION=		2
+PKGREVISION=		3
 CATEGORIES=		cross
 MASTER_SITES=		http://savannah.nongnu.org/download/avr-libc/
 EXTRACT_SUFX=		.tar.bz2
@@ -10,8 +10,6 @@ MAINTAINER=		wennmach@NetBSD.org
 HOMEPAGE=		http://savannah.nongnu.org/projects/avr-libc
 COMMENT=		C and math library for Atmel AVR 8-bit microcontrollers
 LICENSE=		modified-bsd
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 BUILD_DEPENDS+=		avr-binutils-[0-9]*:../../cross/avr-binutils
 BUILD_DEPENDS+=		avr-gcc-[0-9]*:../../cross/avr-gcc

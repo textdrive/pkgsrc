@@ -1,8 +1,8 @@
-# $NetBSD: Makefile,v 1.11 2012/09/03 11:16:26 sno Exp $
+# $NetBSD: Makefile,v 1.13 2012/10/03 21:54:19 wiz Exp $
 
 DISTNAME=	DBIx-Class-TimeStamp-0.14
 PKGNAME=	p5-${DISTNAME}
-PKGREVISION=	2
+PKGREVISION=	3
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=DBIx/}
 
@@ -10,8 +10,6 @@ MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	http://search.cpan.org/dist/DBIx-Class-TimeStamp/
 COMMENT=	DBIx::Class component to automatically handle timestamp fields
 LICENSE=	${PERL5_LICENSE}
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 PERL5_MODULE_TYPE=	Module::Install::Bundled
 USE_LANGUAGES=	# empty

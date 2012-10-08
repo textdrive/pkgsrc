@@ -1,10 +1,10 @@
-# $NetBSD: Makefile,v 1.38 2012/09/15 10:07:13 obache Exp $
+# $NetBSD: Makefile,v 1.42 2012/10/04 00:22:00 cheusov Exp $
 #
 
 VERSION=	2.8.10.1
 DISTNAME=	wxPython-src-${VERSION}
 PKGNAME=	${PYPKGPREFIX}-wxWidgets-${VERSION}
-PKGREVISION=	13
+PKGREVISION=	16
 CATEGORIES=	x11 python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wxpython/}
 EXTRACT_SUFX=	.tar.bz2
@@ -20,7 +20,8 @@ USE_LANGUAGES=	c c++
 USE_TOOLS+=	gmake pkg-config
 
 # previous name of the package
-CONFLICTS+=	${PYPKGPREFIX}-wxWindows-[0-9]*
+CONFLICTS+=		${PYPKGPREFIX}-wxWindows-[0-9]*
+PYTHON_SELF_CONFLICT=	yes
 
 WXARG=	WXPORT=gtk2 UNICODE=1
 

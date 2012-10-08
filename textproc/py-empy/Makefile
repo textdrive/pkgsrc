@@ -1,8 +1,9 @@
-# $NetBSD: Makefile,v 1.1 2012/07/14 21:59:32 wiz Exp $
+# $NetBSD: Makefile,v 1.3 2012/10/04 00:21:58 cheusov Exp $
 #
 
 DISTNAME=	empy-3.3
 PKGNAME=	${PYPKGPREFIX}-${DISTNAME}
+PKGREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	http://www.alcyone.com/software/empy/
 
@@ -18,6 +19,8 @@ REPLACE_PYTHON+=        em.py
 USE_TOOLS+=		pax
 PYDISTUTILSPKG=		# yes
 PLIST_SUBST+=		PYVERSSUFFIX="${PYVERSSUFFIX}"
+
+PYTHON_SELF_CONFLICT=	yes
 
 # Fix html path in documentation
 SUBST_CLASSES+=		doc

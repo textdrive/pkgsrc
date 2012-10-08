@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.29 2012/09/15 10:03:57 obache Exp $
+# $NetBSD: Makefile,v 1.32 2012/10/03 21:54:04 wiz Exp $
 #
 # NOTE: when updating this package, there are two places that sound
 #       tarballs need to be checked
@@ -7,7 +7,7 @@ DISTNAME=	asterisk-10.8.0
 DIST_SUBDIR=	${PKGNAME_NOREV}
 DISTFILES=	${DEFAULT_DISTFILES}
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
-PKGREVISION=	1
+PKGREVISION=	3
 CATEGORIES=	comms net audio
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/ \
@@ -19,8 +19,6 @@ COMMENT=	The Asterisk Software PBX
 LICENSE=	gnu-gpl-v2
 
 CONFLICTS+=	asterisk-sounds-extra-[0-9]*
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 .include "../../mk/bsd.prefs.mk"
 

@@ -1,6 +1,6 @@
-# $NetBSD: Makefile,v 1.27 2012/03/09 13:41:30 fhajny Exp $
+# $NetBSD: Makefile,v 1.30 2012/10/04 10:46:48 asau Exp $
 
-DISTNAME=	memcached-1.4.13
+DISTNAME=	memcached-1.4.15
 CATEGORIES=	devel
 MASTER_SITES=	http://memcached.googlecode.com/files/
 
@@ -30,6 +30,8 @@ PKG_USERS=		${MEMCACHED_USER}:${MEMCACHED_GROUP}
 PKG_GROUPS_VARS+=	MEMCACHED_GROUP
 PKG_USERS_VARS+=	MEMCACHED_USER
 FILES_SUBST+=		MEMCACHED_USER=${MEMCACHED_USER}
+
+TEST_TARGET=		test
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DESTDIR}${PREFIX}/share/doc/${PKGBASE}

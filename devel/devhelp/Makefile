@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.77 2012/09/15 10:04:07 obache Exp $
+# $NetBSD: Makefile,v 1.79 2012/10/03 21:54:29 wiz Exp $
 
 DISTNAME=		devhelp-2.32.0
-PKGREVISION=		13
+PKGREVISION=		15
 CATEGORIES=		devel x11
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/devhelp/2.32/}
 EXTRACT_SUFX=		.tar.bz2

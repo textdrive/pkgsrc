@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.65 2012/09/15 10:04:28 obache Exp $
+# $NetBSD: Makefile,v 1.68 2012/10/03 21:55:57 wiz Exp $
 
 DISTNAME=		kile-2.1.1
-PKGREVISION=		4
+PKGREVISION=		6
 CATEGORIES=		editors kde
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=kile/}
 EXTRACT_SUFX=		.tar.bz2
@@ -9,8 +9,6 @@ EXTRACT_SUFX=		.tar.bz2
 MAINTAINER=		markd@NetBSD.org
 HOMEPAGE=		http://kile.sourceforge.net/
 COMMENT=		LaTeX source editor - TeX shell - Gnuplot front end
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 BUILD_DEPENDS+= automoc4>=0.9.87:../../devel/automoc4
 

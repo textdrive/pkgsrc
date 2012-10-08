@@ -1,8 +1,8 @@
-# $NetBSD: Makefile,v 1.21 2012/09/15 10:03:43 obache Exp $
+# $NetBSD: Makefile,v 1.24 2012/10/03 21:53:57 wiz Exp $
 #
 
 DISTNAME=	pavucontrol-0.9.10
-PKGREVISION=	9
+PKGREVISION=	11
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/pavucontrol/
 
@@ -15,8 +15,6 @@ USE_LANGUAGES=	c c++
 USE_TOOLS+=	pkg-config gmake intltool perl msgfmt
 
 CONFIGURE_ARGS+=	--disable-lynx
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 .include "../../audio/libcanberra/buildlink3.mk"
 .include "../../audio/pulseaudio/buildlink3.mk"

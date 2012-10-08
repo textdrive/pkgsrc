@@ -1,7 +1,8 @@
-# $NetBSD: Makefile,v 1.4 2012/02/26 08:28:34 sbd Exp $
+# $NetBSD: Makefile,v 1.6 2012/10/04 00:21:58 cheusov Exp $
 
 DISTNAME=	omniORBpy-3.5
 PKGNAME=	${PYPKGPREFIX}-${DISTNAME}
+PKGREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=omniorb/}
 EXTRACT_SUFX=	.tar.bz2
@@ -17,6 +18,8 @@ GNU_CONFIGURE=	yes
 USE_TOOLS+=	gmake
 USE_LANGUAGES+=	c c++
 MAKE_FILE=	GNUmakefile
+
+PYTHON_SELF_CONFLICT=	yes
 
 .include "../../lang/python/application.mk"
 .include "../../net/omniORB/buildlink3.mk"

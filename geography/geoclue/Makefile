@@ -1,8 +1,8 @@
-# $NetBSD: Makefile,v 1.12 2012/09/15 10:04:44 obache Exp $
+# $NetBSD: Makefile,v 1.14 2012/10/04 09:19:17 asau Exp $
 #
 
 DISTNAME=	geoclue-0.12.0
-PKGREVISION=	10
+PKGREVISION=	11
 CATEGORIES=	geography
 MASTER_SITES=	http://folks.o-hand.com/jku/geoclue-releases/
 
@@ -10,8 +10,6 @@ MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	http://www.freedesktop.org/wiki/Software/GeoClue
 COMMENT=	Geoinformation service API and base providers
 #LICENSE=	# TODO: (see mk/license.mk)
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes

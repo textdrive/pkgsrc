@@ -1,8 +1,9 @@
-# $NetBSD: Makefile,v 1.8 2012/02/04 12:03:32 obache Exp $
+# $NetBSD: Makefile,v 1.10 2012/10/04 00:22:00 cheusov Exp $
 #
 
 DISTNAME=	pyexcelerator-${VERSION}
 PKGNAME=	${PYPKGPREFIX}-Excelerator-${VERSION}
+PKGREVISION=	1
 VERSION=	0.6.4.1
 CATEGORIES=	textproc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pyexcelerator/}
@@ -36,6 +37,8 @@ REPLACE_PYTHON+=	pyExcelerator/Worksheet.py
 REPLACE_PYTHON+=	pyExcelerator/__init__.py
 
 INSTALLATION_DIRS=	share/doc/py-Excelerator share/examples/py-Excelerator
+
+PYTHON_SELF_CONFLICT=	yes
 
 post-install:
 	for f in CHANGES.txt LICENSE.txt README.txt THANKS.txt TODO.txt ; do \

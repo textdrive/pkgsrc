@@ -1,8 +1,8 @@
-# $NetBSD: Makefile,v 1.19 2012/09/15 10:03:43 obache Exp $
+# $NetBSD: Makefile,v 1.22 2012/10/03 21:53:58 wiz Exp $
 #
 
 DISTNAME=	pavumeter-0.9.3
-PKGREVISION=	16
+PKGREVISION=	18
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/pavumeter/
 
@@ -15,8 +15,6 @@ USE_LANGUAGES=	c c++
 USE_TOOLS+=	pkg-config gmake intltool perl
 
 CONFIGURE_ARGS+=	--disable-lynx
-
-PKG_DESTDIR_SUPPORT=  user-destdir
 
 .include "../../audio/libcanberra/buildlink3.mk"
 .include "../../audio/pulseaudio/buildlink3.mk"

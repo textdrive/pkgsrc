@@ -5,8 +5,6 @@ CATEGORIES+=		converters
 COMMENT=		PHP extension for multibyte characters support
 LICENSE=		php
 
-PKG_DESTDIR_SUPPORT=	user-destdir
-
 CONFLICTS=		php-mbstring-[0-9]*
 
 INSTALLATION_DIRS+=	${PREFIX}/include/php/ext/mbstring
