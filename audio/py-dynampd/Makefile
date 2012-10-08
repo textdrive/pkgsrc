@@ -1,9 +1,10 @@
-# $NetBSD: Makefile,v 1.1 2012/09/12 17:21:20 wiz Exp $
+# $NetBSD: Makefile,v 1.4 2012/10/04 00:22:00 cheusov Exp $
 #
 
 DISTNAME=	dynampd
 VERSION=	1.1.0
 PKGNAME=	${PYPKGPREFIX}-dynampd-${VERSION}
+PKGREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://dynampd.ubitux.fr/
 EXTRACT_SUFX=	.py
@@ -16,13 +17,13 @@ COMMENT=	Dynamic playlist generator for MPD
 DEPENDS+=	${PYPKGPREFIX}-mpd-[0-9]*:../../audio/py-mpd
 DEPENDS+=	${PYPKGPREFIX}-simplejson-[0-9]*:../../converters/py-simplejson
 
-PKG_DESTDIR_SUPPORT=	user-destdir
-
 DIST_SUBDIR=		dynampd-${VERSION}
 WRKSRC=			${WRKDIR}
 USE_LANGUAGES=		# none
 INSTALLATION_DIRS=	bin
 REPLACE_PYTHON=		dynampd.py
+
+PYTHON_SELF_CONFLICT=	yes
 
 do-build:
 

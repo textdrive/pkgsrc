@@ -1,8 +1,9 @@
-# $NetBSD: Makefile,v 1.1.1.1 2010/08/01 10:14:31 obache Exp $
+# $NetBSD: Makefile,v 1.3 2012/10/04 00:21:58 cheusov Exp $
 #
 
 DISTNAME=	aafigure-0.5
 PKGNAME=	${PYPKGPREFIX}-${DISTNAME}
+PKGREVISION=	1
 CATEGORIES=	graphics converters python
 MASTER_SITES=	http://pypi.python.org/packages/source/a/aafigure/
 
@@ -17,6 +18,8 @@ DEPENDS+=	${PYPKGPREFIX}-reportlab-[0-9]*:../../print/py-reportlab
 PKG_DESTDIR_SUPPORT=	user-destdir
 
 USE_LANGUAGES=	# none
+
+PYTHON_SELF_CONFLICT=	yes
 
 .include "../../lang/python/distutils.mk"
 .include "../../mk/bsd.pkg.mk"

@@ -1,8 +1,8 @@
-# $NetBSD: Makefile,v 1.14 2011/08/14 07:43:02 obache Exp $
+# $NetBSD: Makefile,v 1.16 2012/10/03 21:54:05 wiz Exp $
 #
 
 DISTNAME=	gscmxx-0.4.1
-PKGREVISION=	8
+PKGREVISION=	9
 CATEGORIES=	comms x11 perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gscmxx/}
 
@@ -17,7 +17,6 @@ DEPENDS+=	p5-Image-Size>=2.92:../../graphics/p5-Image-Size
 DEPENDS+=	scmxx>=0.6:../../comms/scmxx
 
 PKG_INSTALLATION_TYPES=	overwrite pkgviews
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 PERL5_PACKLIST=	auto/gscmxx/.packlist
 

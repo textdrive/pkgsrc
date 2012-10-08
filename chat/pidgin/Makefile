@@ -1,9 +1,7 @@
-# $NetBSD: Makefile,v 1.44 2012/09/15 10:03:52 obache Exp $
+# $NetBSD: Makefile,v 1.46 2012/10/03 00:02:42 asau Exp $
 
-PKGREVISION=		1
+PKGREVISION=		2
 COMMENT=		Multi-protocol Instant Messaging client GTK frontend
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 .include		"../../chat/libpurple/Makefile.common"
 

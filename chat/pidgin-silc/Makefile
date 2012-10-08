@@ -1,11 +1,9 @@
-# $NetBSD: Makefile,v 1.34 2012/09/15 10:03:55 obache Exp $
+# $NetBSD: Makefile,v 1.37 2012/10/03 21:54:03 wiz Exp $
 
 PKGNAME=	pidgin-silc-${PIDGIN_VERSION}
-PKGREVISION=	1
+PKGREVISION=	3
 
 COMMENT=	SILC plugin for the Pidgin instant messenger
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 .include "../../chat/libpurple/Makefile.common"
 

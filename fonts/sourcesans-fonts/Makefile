@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.1 2012/08/06 14:27:49 ryoon Exp $
+# $NetBSD: Makefile,v 1.3 2012/10/03 18:28:30 asau Exp $
 #
 
-DISTNAME=	SourceSansPro_FontsOnly-1.033
+DISTNAME=	SourceSansPro_FontsOnly-1.036
 PKGNAME=	${DISTNAME:S/SourceSansPro_FontsOnly/sourcesans-fonts/}
 CATEGORIES=	fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sourcesans.adobe/}
@@ -12,14 +12,12 @@ HOMEPAGE=	http://sourceforge.net/projects/sourcesans.adobe/
 COMMENT=	Set of OpenType fonts designed for user interfaces from Adobe
 LICENSE=	open-font-license
 
-PKG_DESTDIR_SUPPORT=	user-destdir
-
 USE_LANGUAGES=	# none
 NO_BUILD=	yes
 FONTS_DIR=	${PREFIX}/share/fonts/sourcesans
 INSTALLATION_DIRS=	share/fonts/sourcesans
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/OTF/*.otf  ${DESTDIR}${FONTS_DIR}
+	${INSTALL_DATA} ${WRKSRC}/*.otf  ${DESTDIR}${FONTS_DIR}
 
 .include "../../mk/bsd.pkg.mk"

@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.99 2012/09/22 13:48:16 ryoon Exp $
+# $NetBSD: Makefile,v 1.101 2012/10/03 12:55:20 asau Exp $
 
 DISTNAME=		vice-2.3
-PKGREVISION=		9
+PKGREVISION=		10
 CATEGORIES=		emulators
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=vice-emu:Q}/
 MASTER_SITES+=		ftp://ftp.zimmers.net/pub/cbm/crossplatform/emulators/VICE/
@@ -11,8 +11,6 @@ MAINTAINER=		rhialto@falu.nl
 HOMEPAGE=		http://vice-emu.sourceforge.net/
 COMMENT=		Emulator for C64, C128, CBM-II, PET, VIC20, Plus4 and C16
 LICENSE=		gnu-gpl-v2
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 RESTRICTED=		ROM image copyright is questionable.
 NO_BIN_ON_CDROM=	${RESTRICTED}

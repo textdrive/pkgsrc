@@ -1,9 +1,9 @@
-# $NetBSD: Makefile,v 1.31 2012/09/15 10:03:45 obache Exp $
+# $NetBSD: Makefile,v 1.33 2012/10/02 23:48:11 asau Exp $
 #
 
 DISTNAME=	terminatorX-3.82
 PKGNAME=	${DISTNAME:S/X/x/}
-PKGREVISION=	17
+PKGREVISION=	18
 CATEGORIES=	audio
 MASTER_SITES=	http://terminatorx.org/dist/
 EXTRACT_SUFX=	.tar.bz2
@@ -11,8 +11,6 @@ EXTRACT_SUFX=	.tar.bz2
 MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	http://terminatorx.org/
 COMMENT=	Realtime audio synthesizer
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 DEPENDS+=	mpg123-[0-9]*:../../audio/mpg123
 DEPENDS+=	sox-[0-9]*:../../audio/sox

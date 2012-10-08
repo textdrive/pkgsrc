@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.1.1.1 2012/01/23 23:34:37 wiz Exp $
+# $NetBSD: Makefile,v 1.5 2012/10/04 20:16:31 wiz Exp $
 #
 
-DISTNAME=	pdf-parser_V0_3_7
+DISTNAME=	pdf-parser_V0_3_9
 PKGNAME=	${PYPKGPREFIX}-${DISTNAME:S/_V/-/:S/_/./g}
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.didierstevens.com/files/software/
@@ -21,7 +21,7 @@ REPLACE_PYTHON=	pdf-parser.py
 
 INSTALLATION_DIRS=	bin
 
-PYTHON_VERSIONS_ACCEPTED=	26 25
+PYTHON_SELF_CONFLICT=	yes
 
 do-build:
 

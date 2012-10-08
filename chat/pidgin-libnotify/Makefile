@@ -1,12 +1,10 @@
-# $NetBSD: Makefile,v 1.19 2012/09/15 10:03:54 obache Exp $
+# $NetBSD: Makefile,v 1.22 2012/10/03 21:54:03 wiz Exp $
 #
 
 DISTNAME=	pidgin-libnotify-0.14
-PKGREVISION=	18
+PKGREVISION=	20
 CATEGORIES=	chat
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gaim-libnotify/}
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	http://gaim-libnotify.sourceforge.net/

@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.69 2012/09/15 10:04:24 obache Exp $
+# $NetBSD: Makefile,v 1.71 2012/10/03 11:43:31 asau Exp $
 
 DISTNAME=	dasher-4.10.1
-PKGREVISION=	17
+PKGREVISION=	18
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/dasher/4.10/}
 EXTRACT_SUFX=	.tar.bz2
@@ -10,8 +10,6 @@ MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	http://www.inference.phy.cam.ac.uk/dasher/
 COMMENT=	Easy typing without using keyboard
 LICENSE=	gnu-gpl-v2
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 USE_LANGUAGES=		c c++
 USE_LIBTOOL=		yes

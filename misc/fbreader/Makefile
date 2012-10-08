@@ -1,11 +1,11 @@
-# $NetBSD: Makefile,v 1.21 2012/09/15 10:05:35 obache Exp $
+# $NetBSD: Makefile,v 1.24 2012/10/04 20:04:42 wiz Exp $
 #
 
-DISTNAME=	fbreader-sources-0.10.7
+DISTNAME=	fbreader-sources-0.99.2
 PKGNAME=	${DISTNAME:S/-sources//}
-PKGREVISION=	14
+PKGREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	http://www.fbreader.org/
+MASTER_SITES=	http://www.fbreader.org/files/desktop/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	pkgsrc-users@NetBSD.org
@@ -17,7 +17,7 @@ PKG_DESTDIR_SUPPORT=	user-destdir
 
 WRKSRC=		${WRKDIR}/${PKGNAME_NOREV}
 USE_LANGUAGES=	c c++
-USE_TOOLS+=	gmake
+USE_TOOLS+=	gmake pkg-config
 
 MAKE_ENV+=	INSTALLDIR=${PREFIX}
 MAKE_ENV+=	DESTDIR=${DESTDIR}

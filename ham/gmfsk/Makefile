@@ -1,16 +1,14 @@
-# $NetBSD: Makefile,v 1.45 2012/09/15 10:05:09 obache Exp $
+# $NetBSD: Makefile,v 1.47 2012/10/03 13:01:43 asau Exp $
 #
 
 DISTNAME=	gmfsk-0.6
-PKGREVISION=	30
+PKGREVISION=	31
 CATEGORIES=	ham
 MASTER_SITES=	http://gmfsk.connect.fi/
 
 MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	http://gmfsk.connect.fi/
 COMMENT=	Multimode HF terminal program
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 USE_LANGUAGES=	c c++
 USE_TOOLS+=	gmake pkg-config

@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.61 2012/09/15 10:04:36 obache Exp $
+# $NetBSD: Makefile,v 1.63 2012/10/03 21:56:02 wiz Exp $
 
 DISTNAME=	kmymoney2-1.0.5
-PKGREVISION=	10
+PKGREVISION=	11
 CATEGORIES=	finance kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kmymoney2/}
 EXTRACT_SUFX=  .tar.bz2
@@ -10,8 +10,6 @@ MAINTAINER=	gary@duzan.org
 HOMEPAGE=	http://kmymoney2.sourceforge.net/
 COMMENT=	Personal finance manager for KDE
 LICENSE=	gnu-gpl-v2
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 USE_TOOLS+=		gmake msgfmt perl pkg-config bash
 USE_LANGUAGES=		c c++

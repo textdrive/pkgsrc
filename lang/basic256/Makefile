@@ -1,9 +1,9 @@
-# $NetBSD: Makefile,v 1.11 2012/09/15 10:05:18 obache Exp $
+# $NetBSD: Makefile,v 1.13 2012/10/02 20:11:36 asau Exp $
 #
 
 DISTNAME=	basic256_0.9.6.71
 PKGNAME=	${DISTNAME:S/_/-/}
-PKGREVISION=	2
+PKGREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kidbasic/}
 EXTRACT_SUFX=	.tgz
@@ -12,8 +12,6 @@ MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	http://www.basic256.org/
 COMMENT=	BASIC language with traditional control structures
 LICENSE=	gnu-gpl-v2
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 MAKE_JOBS_SAFE=	no
 

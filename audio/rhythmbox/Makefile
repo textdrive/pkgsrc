@@ -1,8 +1,8 @@
-# $NetBSD: Makefile,v 1.97 2012/09/15 10:03:44 obache Exp $
+# $NetBSD: Makefile,v 1.99 2012/10/02 23:48:07 asau Exp $
 #
 
 DISTNAME=	rhythmbox-0.12.8
-PKGREVISION=	17
+PKGREVISION=	18
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/rhythmbox/0.12/}
 EXTRACT_SUFX=	.tar.bz2
@@ -10,8 +10,6 @@ EXTRACT_SUFX=	.tar.bz2
 MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	http://www.gnome.org/projects/rhythmbox/
 COMMENT=	Music management application for GNOME
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 .include "options.mk"
 

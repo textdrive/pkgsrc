@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.27 2012/09/15 10:04:51 obache Exp $
+# $NetBSD: Makefile,v 1.30 2012/10/03 21:56:09 wiz Exp $
 #
 
-DISTNAME=	fotoxx-12.08
+DISTNAME=	fotoxx-12.10
 PKGREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.kornelix.com/uploads/1/3/0/3/13035936/
@@ -15,6 +15,7 @@ PKG_DESTDIR_SUPPORT=	user-destdir
 
 DEPENDS+=	xdg-utils-[0-9]*:../../misc/xdg-utils
 DEPENDS+=	p5-Image-ExifTool-[0-9]*:../../graphics/p5-Image-ExifTool
+DEPENDS+=	dcraw-[0-9]*:../../graphics/dcraw
 DEPENDS+=	gimp-ufraw-[0-9]*:../../graphics/gimp-ufraw
 
 USE_LANGUAGES=	c++

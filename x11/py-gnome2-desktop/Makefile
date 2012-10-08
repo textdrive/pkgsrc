@@ -1,9 +1,9 @@
-# $NetBSD: Makefile,v 1.66 2012/09/19 22:59:17 gdt Exp $
+# $NetBSD: Makefile,v 1.68 2012/10/03 22:14:03 wiz Exp $
 #
 
 DISTNAME=	gnome-python-desktop-2.32.0
 PKGNAME=	${PYPKGPREFIX}-${DISTNAME:S/-python/2/}
-PKGREVISION=	17
+PKGREVISION=	18
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gnome-python-desktop/2.32/}
 EXTRACT_SUFX=	.tar.bz2
@@ -23,13 +23,12 @@ USE_TOOLS+=	pkg-config gmake
 
 PKGCONFIG_OVERRIDE+=	gnome-python-desktop-2.0.pc.in
 
-# The "real" value here is: 27 26 25
+# The "real" value here is: 27 26
 # but because of single-version deps of gnome bits this will only
 # ever work for the python version those gnome bits were built with.
-PYTHON_VERSIONS_REALLY_ACCEPTED=27 26 25
+PYTHON_VERSIONS_REALLY_ACCEPTED=27 26
 PYTHON_VERSIONS_ACCEPTED=	${PYTHON_VERSION_DEFAULT:M27}
 PYTHON_VERSIONS_ACCEPTED+=	${PYTHON_VERSION_DEFAULT:M26}
-PYTHON_VERSIONS_ACCEPTED+=	${PYTHON_VERSION_DEFAULT:M25}
 
 .include "options.mk"
 

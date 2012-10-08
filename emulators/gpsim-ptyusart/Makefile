@@ -1,16 +1,14 @@
-# $NetBSD: Makefile,v 1.22 2012/09/15 10:04:32 obache Exp $
+# $NetBSD: Makefile,v 1.24 2012/10/03 12:55:14 asau Exp $
 #
 
 DISTNAME=	ptyusart-0.3.2
 PKGNAME=	gpsim-${DISTNAME}
-PKGREVISION=	14
+PKGREVISION=	15
 CATEGORIES=	emulators
 MASTER_SITES=	http://www-asim.lip6.fr/~bouyer/pic/
 
 MAINTAINER=	bouyer@NetBSD.org
 COMMENT=	Pseudo-tty module for gpsim
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 ONLY_FOR_PLATFORM=	NetBSD-*-*
 

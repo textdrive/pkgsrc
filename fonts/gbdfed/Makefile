@@ -1,8 +1,8 @@
-# $NetBSD: Makefile,v 1.14 2012/09/15 10:04:36 obache Exp $
+# $NetBSD: Makefile,v 1.16 2012/10/03 18:28:23 asau Exp $
 #
 
 DISTNAME=	gbdfed-1.5
-PKGREVISION=	11
+PKGREVISION=	12
 CATEGORIES=	fonts
 MASTER_SITES=	http://www.math.nmsu.edu/~mleisher/Software/gbdfed/
 EXTRACT_SUFX=	.tbz2
@@ -10,8 +10,6 @@ EXTRACT_SUFX=	.tbz2
 MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	http://www.math.nmsu.edu/~mleisher/Software/gbdfed/
 COMMENT=	GTK-based BDF font editor
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 GNU_CONFIGURE=	yes
 USE_TOOLS+=	pkg-config

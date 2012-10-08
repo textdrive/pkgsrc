@@ -1,9 +1,9 @@
-# $NetBSD: Makefile,v 1.13 2012/09/15 10:04:45 obache Exp $
+# $NetBSD: Makefile,v 1.15 2012/10/04 09:19:18 asau Exp $
 #
 
 DISTNAME=	libchamplain-0.6.1
 PKGNAME=	libchamplain06-0.6.1
-PKGREVISION=	12
+PKGREVISION=	13
 CATEGORIES=	geography
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/libchamplain/0.6/}
 EXTRACT_SUFX=	.tar.bz2
@@ -12,8 +12,6 @@ MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	http://projects.gnome.org/libchamplain/
 COMMENT=	Map widget
 #LICENSE=	# TODO: (see mk/license.mk)
-
-PKG_DESTDIR_SUPPORT=	user-destdir
 
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes

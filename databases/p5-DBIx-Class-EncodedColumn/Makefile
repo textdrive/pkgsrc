@@ -1,8 +1,8 @@
-# $NetBSD: Makefile,v 1.7 2012/09/03 11:16:27 sno Exp $
+# $NetBSD: Makefile,v 1.9 2012/10/03 21:54:18 wiz Exp $
 
 DISTNAME=	DBIx-Class-EncodedColumn-0.00011
 PKGNAME=	p5-${DISTNAME}
-PKGREVISION=	1
+PKGREVISION=	2
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=DBIx/}
 
@@ -36,8 +36,6 @@ BUILD_DEPENDS+=	p5-Module-Install-ReadmeFromPod-[0-9]*:../../devel/p5-Module-Ins
 USE_LANGUAGES=		# empty
 PERL5_PACKLIST=		auto/DBIx/Class/EncodedColumn/.packlist
 PERL5_MODULE_TYPE=	Module::Install::Bundled
-
-PKG_DESTDIR_SUPPORT=    user-destdir
 
 .include "../../lang/perl5/module.mk"
 .include "../../mk/bsd.pkg.mk"

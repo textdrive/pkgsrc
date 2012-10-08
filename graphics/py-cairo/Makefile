@@ -1,9 +1,9 @@
-# $NetBSD: Makefile,v 1.33 2012/09/07 19:16:51 adam Exp $
+# $NetBSD: Makefile,v 1.36 2012/10/04 00:21:59 cheusov Exp $
 #
 
 DISTNAME=		py2cairo-1.8.10
 PKGNAME=		${PYPKGPREFIX}-${DISTNAME:S/py2//}
-PKGREVISION=		3
+PKGREVISION=		5
 CATEGORIES=		graphics
 MASTER_SITES=		http://cairographics.org/releases/
 
@@ -24,6 +24,8 @@ CONFIGURE_ENV+=		PYTHON=${PYTHONBIN:Q}
 
 PKGCONFIG_OVERRIDE+=	pycairo.pc.in
 PY_PATCHPLIST=		yes
+
+PYTHON_SELF_CONFLICT=	yes
 
 .include "../../mk/compiler.mk"
 
