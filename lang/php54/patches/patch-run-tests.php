@@ -1,4 +1,4 @@
-$NetBSD: patch-run-tests.php,v 1.1.2.1 2012/07/23 18:24:34 tron Exp $
+$NetBSD: patch-run-tests.php,v 1.2 2012/07/20 12:29:05 taca Exp $
 
 Use proper shbang line.
 
